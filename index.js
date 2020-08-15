@@ -16,8 +16,8 @@ app.get('/', function(req, res){
 
 app.use('/api/todos', todoRoutes);
 
-app.listen(port, function(){
-    console.log("APP IS RUNNING ON PORT " + process.env.PORT);
-})
-    
-    
+//Tell express to listen
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
+});
